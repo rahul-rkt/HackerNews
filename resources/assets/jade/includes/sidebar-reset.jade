@@ -1,0 +1,22 @@
+div#reset-password
+    h5.lead Reset Password
+
+    form#post-password-reset
+        input(type="hidden", name="token", value="{{ $token }}")
+
+        div.field-wrap
+            label Email Address
+                span.req *
+            input(name="email", type="email", required="", autocomplete="off")
+
+        div.field-wrap
+            label New Password
+                span.req *
+            input(name="password", type="password", required="", autocomplete="off")
+
+        div.field-wrap
+            label Retype Password
+                span.req *
+            input(name="password_confirmation", type="password", required="", autocomplete="off")
+
+        button.submit-button(type="submit") Confirm

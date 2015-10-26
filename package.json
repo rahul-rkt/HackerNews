@@ -1,0 +1,17 @@
+{
+    "private": true,
+
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "laravel-elixir-jade": "^0.1.9",
+        "gulp-coffee": "^2.3.1",
+        "gulp-clean": "^0.3.1",
+        "gulp-run": "^1.6.11"
+    },
+
+    "dependencies": {
+        "coffee-script": "^1.10.0",
+        "laravel-elixir": "^3.0.0",
+        "bootstrap-sass": "^3.0.0"
+    }
+}

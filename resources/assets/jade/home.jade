@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        include ./includes/head.jade
+
+
+    body
+        <!--[if lt IE 10]>
+        <div class="browserupgrade"><h1>Incompatible Browser!</h1><p>You are using an <b>outdated</b> browser.<br/> <a href="http://browsehappy.com/">Click here</a> to upgrade to a mordern browser and continue enjoying the web.</p></div>
+        <div class="mask"></div>
+        <![endif]-->
+
+
+        header.header#top
+            img(src="/img/logo.png" alt="HackerNews")
+            h4 by Rahul Thakur
+
+
+        nav.nav
+            ul#nav
+                li
+                    a(href="#implementation") Implementation
+
+                li#icon
+                    a(href="#top")
+                        img(src="/img/icon.png")
+
+                li
+                    a(href="http://github.com/rahul-rkt/HackerNews") Repository
+
+            div#nav-buffer
+
+
+        main.main#implementation
+            section.content
+                div.server-response.
+                    @if($errors->any())
+                        @include("includes.errors")
+                    @endif
+                div.news-board
+
+
+            section.sidebar
+                div.server-request.
+                    @if(isset($token))
+                        @include("includes.sidebar-reset")
+                    @elseif(Auth::check())
+                        @include("includes.sidebar-user")
+                    @else
+                        @include("includes.sidebar-guest")
+                    @endif
+                div.loading
+                    div.ring-animation
+                    p.divine-loading-message Loading..
+
+
+        footer.footer &copy;&nbsp;2015&nbsp;
+            a(href="http://rahulthakur.me", target="_blank") R
+
+
+        //- optimized for live
+        //- script(src="/js/main.min.js")
+        //- expanded for dev
+        script(data-main="/js/main" src="/js/lib/require.js")

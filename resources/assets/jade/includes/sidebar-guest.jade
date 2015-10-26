@@ -1,0 +1,52 @@
+div#guest
+    div.container
+        ul.tab-selector
+            li.tab.active
+                a.button(href="#signup") Sign Up
+            li.tab
+                a.button(href="#login") Log In
+
+
+        div.tab-content
+            div#signup
+                h5.lead Sign Up for Free
+                form#post-auth-register
+                    div.field-wrap
+                        label Display Name
+                            span.req *
+                        input(name="name", type="text", required="", autocomplete="off")
+                    div.field-wrap
+                        label Email Address
+                            span.req *
+                        input(name="email", type="email", required="", autocomplete="off")
+                    div.field-wrap
+                        label Password
+                            span.req *
+                        input(name="password", type="password", required="", autocomplete="off")
+                    button.submit-button(type="submit") Get Started
+
+
+            div#login
+                h5.lead Welcome Back
+                form#post-auth-login
+                    div.field-wrap
+                        label Email Address
+                            span.req *
+                        input(name="email", type="email", required="", autocomplete="off")
+                    div.field-wrap
+                        label Password
+                            span.req *
+                        input(name="password", type="password", required="", autocomplete="off")
+                    p.forgot
+                        a(href="#forgot") Forgot Password?
+                    button.submit-button(type="submit") Start Hacking
+
+
+            div#forgot
+                h5.lead Forgot Password?
+                form#post-password-email
+                    div.field-wrap
+                        label Email Address
+                            span.req *
+                        input(name="email", type="email", required="", autocomplete="off")
+                    button.submit-button(type="submit") Send Reset Link
