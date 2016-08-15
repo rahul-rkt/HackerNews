@@ -1,5 +1,5 @@
 
-<div class="errors"><a href="#dismiss" class="dismiss-error">[ x ]</a>
+<div class="errors"><a href="#dismiss" class="dismiss">[ x ]</a>
   <p>Something went wrong, please try again..</p>
   <ul class="error-list">
     @foreach($errors->all() as $error)

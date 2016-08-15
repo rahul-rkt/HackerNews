@@ -1,0 +1,16 @@
+div.control-buttons
+    button.grey-button(name="add-article")
+        img(src="/img/add-article.png")
+
+    | @if(Auth::user()->level < 3)
+    button.grey-button(name="approve-article")
+        img(src="/img/approve-article.png")
+    | @endif
+
+    | @if(Auth::user()->level == 1)
+    button.grey-button(name="member-settings")
+        img(src="/img/member-settings.png")
+    | @endif
+
+    button.grey-button(name="user-settings")
+        img(src="/img/user-settings.png")

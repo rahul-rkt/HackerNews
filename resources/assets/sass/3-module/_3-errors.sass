@@ -1,0 +1,18 @@
+.errors
+    display: none
+    +scale-padding(m)
+    +scale-margin(0, 0, m)
+    +boxify(lighten($color-red, 30%))
+    color: darken($color-red, 30%)
+
+    .dismiss
+        padding: 0
+
+    p
+        font-weight: bold
+
+    .error-list
+        margin: 0
+
+        .error-list-item:before
+            color: darken($color-red, 30%)

@@ -13,10 +13,9 @@ require [
     "jquery"
     "navHandler"
     "sidebarHandler"
-    "ajaxHandler"
-    "contentHandler"
+    "requestHandler"
 
-    ], ($, navHandler, sidebarHandler, ajaxHandler, contentHandler) ->
+    ], ($, navHandler, sidebarHandler, requestHandler) ->
 
 
     ###
@@ -33,6 +32,5 @@ require [
     $(document).ready ->
         navHandler.init()
         sidebarHandler.init()
-        ajaxHandler.init()
-        contentHandler.init()
+        requestHandler.init()
         return

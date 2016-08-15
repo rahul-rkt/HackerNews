@@ -5,7 +5,7 @@ require.config({
   }
 });
 
-require(["jquery", "navHandler", "sidebarHandler", "ajaxHandler", "contentHandler"], function($, navHandler, sidebarHandler, ajaxHandler, contentHandler) {
+require(["jquery", "navHandler", "sidebarHandler", "requestHandler"], function($, navHandler, sidebarHandler, requestHandler) {
 
   /*
   
@@ -17,7 +17,6 @@ require(["jquery", "navHandler", "sidebarHandler", "ajaxHandler", "contentHandle
   return $(document).ready(function() {
     navHandler.init();
     sidebarHandler.init();
-    ajaxHandler.init();
-    contentHandler.init();
+    requestHandler.init();
   });
 });

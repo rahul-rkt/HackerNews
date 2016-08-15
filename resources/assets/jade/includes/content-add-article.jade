@@ -1,0 +1,26 @@
+div.add-article
+    a.dismiss(href="#dismiss") [ x ]
+
+    div.fetch-link
+        form#get-article-details
+            div.field-wrap
+                label Article Link
+                    span.req *
+                input(name="url", type="url", autocomplete="off", required)
+            button.green-button(type="submit") Fetch Article
+
+    div.article-details
+            form#post-new-article
+                div.field-wrap
+                    label Article Link
+                        span.req *
+                    input(name="link", type="text", autocomplete="off", required)
+                div.field-wrap
+                    label Email Address
+                        span.req *
+                    input(name="email", type="email", autocomplete="off", required)
+                div.field-wrap
+                    label Password
+                        span.req *
+                    input(name="password", type="password", autocomplete="off", required)
+                button.green-button(type="submit") Get Started

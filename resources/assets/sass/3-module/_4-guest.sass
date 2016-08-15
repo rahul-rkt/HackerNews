@@ -1,0 +1,34 @@
+#guest
+    .container
+        width: 100%
+        text-align: center
+
+        .tab-selector
+            display: flex
+            justify-content: space-around
+
+            .tab
+                margin-bottom: 0
+
+                &:before
+                  content: none
+
+                a
+                    +button-color($color-elements)
+                    &:focus, &:hover, &:active
+                        color: lighten($color-bg, 15%)
+
+            .selected-tab
+                a
+                    background: darken($color-elements, 10%)
+
+        .tab-content
+            > div
+                display: none
+
+            > div:first-child
+                display: block
+
+            #login
+                .forgot
+                    +scale-text(-1)

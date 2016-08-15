@@ -4,13 +4,55 @@
     flex-direction: column
     justify-content: space-between
     align-items: center
-    width: 60.2%
+    flex-grow: 1
+    width: 60%
     height: 100%
+    +scale-margin(0, m, 0, 0)
+
+    +small-screens
+        order: 2
+        width: 100%
+        margin: 0
+
+    .server-response
+        order: 1
+        width: 100%
+
+
+    .app-outputs
+        order: 2
+        position: relative
+        width: 100%
+
+    .news-board
+        order: 2
+        width: 100%
 
 
 .sidebar
     order: 2
     position: relative
-    width: 37.2%
-    height: 100%
-    +boxify
+    width: 30%
+    +scale-margin(0, 0, 0, m)
+
+    +small-screens
+        order: 1
+        width: 100%
+        margin: 0 0 get-margin(l, s)
+
+    .server-request
+        // height: 100%
+
+        #guest, #user, #forgot, #reset-password
+            display: flex
+            justify-content: center
+            align-items: center
+            position: relative
+            height: 100%
+            +scale-padding(l, m)
+
+            +small-screens
+                justify-content: space-around
+
+        #guest, #user, #reset-password
+            +boxify

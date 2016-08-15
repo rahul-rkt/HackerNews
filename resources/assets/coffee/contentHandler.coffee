@@ -13,11 +13,4 @@ define ->
     "use strict"
 
     init: ->
-        $(".server-response").on "click", "a", (event) ->
-            parent = $(this).parent()
-            if(parent.hasClass("errors"))
-                event.preventDefault()
-                parent.hide("slow")
-            return
-
         return

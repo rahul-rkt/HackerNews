@@ -1,0 +1,51 @@
+#user
+    flex-direction: column
+
+    form
+        button
+            +scale-margin(0, 0, l)
+
+    .dp
+        height: 125*$px
+        width: 125*$px
+        object-fit: cover
+        border: $border-size*10 $color-elements solid
+        +border-radius(50%)
+        +scale-margin(0, 0, l)
+
+        +regular-screens
+            height: 100*$px
+            width: 100*$px
+            border: $border-size*8 $color-elements solid
+
+        +medium-screens
+            height: 75*$px
+            width: 75*$px
+            border: $border-size*6 $color-elements solid
+
+        +small-screens
+            order: 1
+            height: 50*$px
+            width: 50*$px
+            margin: 0
+            border: $border-size*4 $color-elements solid
+
+
+    +small-screens
+        flex-direction: row
+        align-items: center
+        justify-content: space-around
+        padding: get-padding(m, s)
+
+        form
+            order: 3
+
+            button
+                margin: 0
+
+        p
+            order: 2
+            margin: 0
+
+            &:last-child
+                display: none

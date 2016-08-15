@@ -1,4 +1,4 @@
-define ->
+define (require) ->
 
 
     ###
@@ -13,17 +13,7 @@ define ->
     "use strict"
 
     init: ->
-        # handles label animation
-        $(".server-request").find("input").on "focus blur", (event) ->
-            $this = $(this)
-            label = $this.prev("label")
-            if($this.val() == "")
-                if(event.type == "focus")
-                    label.addClass "active"
-                else if(event.type == "blur")
-                    label.removeClass "active"
-            return
-
+        require("labelAnimator").init()
 
         # handles swapping of forms
         $(".server-request").on "click", "a", (event) ->
@@ -32,12 +22,21 @@ define ->
             target = $this.attr("href")
             parent = $this.parent()
             if(parent.hasClass("tab"))
-                parent.addClass "active"
-                parent.siblings().removeClass "active"
+                parent.addClass "selected-tab"
+                parent.siblings().removeClass "selected-tab"
             else
-                $(".tab-selector .active").removeClass "active"
+                $(".tab-selector .selected-tab").removeClass "selected-tab"
             $(".tab-content > div").not(target).hide()
             $(target).fadeIn 250
+            return
+
+
+        # handles control-button actions
+        $(".control-buttons").on "click", "button", (event) ->
+            event.preventDefault()
+            target = $("." + $(this).attr("name"))
+            if(!target.hasClass("reveal"))
+                require("dismissAnimator").reveal target
             return
 
         return

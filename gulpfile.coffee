@@ -3,21 +3,25 @@ gulp        = require "gulp"
 gutil       = require "gulp-util"
 coffee      = require "gulp-coffee"
 clean       = require "gulp-clean"
-run         = require "gulp-run"
+shell       = require "gulp-shell"
 require "laravel-elixir-jade"
 
 
 # purge -----------------------------------------------------------------------
 gulp.task "purge", ->
-    gulp.src "./public/css/", {read: false}
+    gulp.src "./resources/views/includes/", read: false
         .pipe clean()
         .on "error", gutil.log
 
-    gulp.src "./public/js/", {read: false}
+    gulp.src "./public/css/", read: false
         .pipe clean()
         .on "error", gutil.log
 
-    gulp.src "./public/img/", {read: false}
+    gulp.src "./public/js/", read: false
+        .pipe clean()
+        .on "error", gutil.log
+
+    gulp.src "./public/img/", read: false
         .pipe clean()
         .on "error", gutil.log
 
@@ -25,9 +29,9 @@ gulp.task "purge", ->
 # js --------------------------------------------------------------------------
 gulp.task "js", ->
     gulp.src "./resources/assets/coffee/*.coffee"
-        .pipe coffee(bare: true)
-        .pipe gulp.dest("./public/js/")
-        # .pipe run("cd ./resources/assets/coffee/optimize; node r.js -o config.js")
+        .pipe coffee bare: true
+        .pipe gulp.dest "./public/js/"
+        # .pipe shell "cd ./public/js/optimize; node r.js -o config.js"
         .on "error", gutil.log
 
 
@@ -43,13 +47,16 @@ elixir (mix) ->
             dest        : "/views/"
             blade       : true
             pretty      : true
+            # pretty      : false
 
        .sass "master.sass"
+
+       .copy "resources/assets/img", "public/img"
+
+       .copy "resources/assets/coffee/optimize", "public/js/optimize"
 
        .copy "resources/assets/coffee/lib", "public/js/lib"
 
        .task "js", "./resources/assets/coffee/**"
-
-       .copy "resources/assets/img", "public/img"
 
        .browserSync proxy: "hackernews.dev"

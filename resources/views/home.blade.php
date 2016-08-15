@@ -40,9 +40,33 @@
               @include("includes.errors")
           @endif
         </div>
-        <div class="news-board"></div>
+        <div class="app-outputs">
+          @if(Auth::check())
+              @include("includes.content-add-article")
+          
+              @if(Auth::user()->level < 3)
+                  @include("includes.content-approve-articles")
+              @endif
+          
+              @if(Auth::user()->level == 1)
+                  @include("includes.content-member-settings")
+              @endif
+          
+              @include("includes.content-user-settings")
+          
+              @include("includes.loading")
+          @endif
+        </div>
+        <div class="news-board">
+          <div class="article-list">       </div>
+        </div>
       </section>
       <section class="sidebar">
+        <div class="app-controls">
+          @if(Auth::check())
+              @include("includes.sidebar-control-buttons")
+          @endif
+        </div>
         <div class="server-request">
           @if(isset($token))
               @include("includes.sidebar-reset")

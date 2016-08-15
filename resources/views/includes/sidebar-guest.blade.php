@@ -2,12 +2,12 @@
 <div id="guest">
   <div class="container">
     <ul class="tab-selector">
-      <li class="tab active"><a href="#signup" class="button">Sign Up</a></li>
+      <li class="tab selected-tab"><a href="#signup" class="button">Sign Up</a></li>
       <li class="tab"><a href="#login" class="button">Log In</a></li>
     </ul>
     <div class="tab-content">
       <div id="signup">
-        <h5 class="lead">Sign Up for Free</h5>
+        <h5 class="lead">Sign Up for&nbsp;Free</h5>
         <form id="post-auth-register">
           <div class="field-wrap">
             <label>Display Name<span class="req">*</span></label>

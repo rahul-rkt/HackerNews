@@ -1,0 +1,16 @@
+.reveal
+    +reveal-animation
+
+
+.conceal
+    +conceal-animation
+
+
+.dismiss
+    display: block
+    margin-bottom: $margin-base*2
+    +scale-padding(m)
+    +scale-text(-2)
+    font-weight: bold
+    text-align: right
+    +link-color($color-red, darken($color-red, 30%))

@@ -2,18 +2,20 @@
     display: flex
     justify-content: space-between
     position: relative
-    top: $nav-height
+    top: $nav-height*2
     +user-select(text)
     +user-select-color
 
     +large-screens
-        +outer-container(60%)
+        +outer-container(65%)
 
     +regular-screens
-        +outer-container(70%)
+        +outer-container(75%)
 
     +medium-screens
-        +outer-container(80%)
+        +outer-container(85%)
 
     +small-screens
-        +outer-container(90%)
+        flex-direction: column
+        align-items: center
+        +outer-container(95%)

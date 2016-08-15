@@ -160,10 +160,10 @@
     box-shadow: $shadow
 
 
-=boxify
+=boxify($bg-color: $color-bg-alt)
     +border-radius
     +box-shadow(inset 0em $px $em-base rgba($color-elements-alt, 0.25))
-    background: $color-bg-alt
+    background: $bg-color
 
 
 // animations, colors, etc ----------------------------------------------------
@@ -208,3 +208,47 @@
 
     &:active
         background: darken($color, 20%)
+
+
+=ring-animation
+    width: 20*$px
+    height: 20*$px
+    border-radius: 10*$px
+    box-shadow: 0 $px 0 0 $color-cyan-bright
+    animation: ring-animation $time-duration-long linear infinite
+
+@keyframes ring-animation
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
+
+
+=reveal-animation($display: block)
+    display: $display !important
+    overflow: hidden
+    animation: reveal-animation $time-duration-long $timing-func-alt 1
+
+@keyframes reveal-animation
+    0%
+        opacity: 0
+        max-height: 0%
+
+    100%
+        opacity: 1
+        max-height: 100%
+
+
+=conceal-animation
+    overflow: hidden
+    animation: conceal-animation $time-duration-long $timing-func-alt 1
+
+@keyframes conceal-animation
+    0%
+        opacity: 1
+        max-height: 100%
+
+    100%
+        opacity: 0
+        max-height: 0%

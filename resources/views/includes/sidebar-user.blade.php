@@ -2,7 +2,7 @@
 <div id="user">
   <form id="get-auth-logout">
     <button type="submit">Logout</button>
-  </form><img src="/img/dp.png" class="dp"/>
-  <p class="name">hackerbouy666</p>
-  <p class="email">hackerbouy666@evilcorp.com</p>
+  </form><img src="{{ Auth::user()->pic }}" class="dp"/>
+  <p class="name">{{ Auth::user()->name }}</p>
+  <p class="email">{{ Auth::user()->email }}</p>
 </div>

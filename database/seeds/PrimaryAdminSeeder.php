@@ -12,11 +12,11 @@ class PrimaryAdminSeeder extends Seeder
     public function run()
     {
         DB::table("users")->insert([
-            "name" => "R",
-            "email" => "rahul.rkt@gmail.com",
-            "password" => bcrypt(env("HN_ADMIN")),
+            "name" => env("HN_ADMIN_NAME"),
+            "email" => env("HN_ADMIN_EMAIL"),
+            "password" => bcrypt(env("HN_ADMIN_PASSWORD")),
             "level" => 1,
-            "pic" => "https://dl.dropboxusercontent.com/s/srnkgtya38vdqqo/Me_500.png"
+            "pic" => env("HN_ADMIN_PIC")
         ]);
     }
 }
